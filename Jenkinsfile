@@ -25,7 +25,7 @@ podTemplate(
 
         stage ('Docker build and push') {
             container ('docker') {
-                def repository = "sybrenbolandit/java-spring-api"
+                def repository = "pistache/java-spring-api"
 
                 withCredentials([usernamePassword(credentialsId: 'dockerhub',
                         usernameVariable: 'registryUser', passwordVariable: 'registryPassword')]) {
