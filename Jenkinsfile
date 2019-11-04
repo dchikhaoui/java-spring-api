@@ -42,10 +42,7 @@ podTemplate(
             stage ("Deploy") {
                 container ('kubectl') {
                     dir ("deployment") {
-                        sh """
-                               kustomize edit set imagetag $repository:$commitId;
-                               kustomize build overlays/test | kubectl apply --record -f -
-                           """
+                        sh "./deploy.sh"
                     }
                 }
             }
