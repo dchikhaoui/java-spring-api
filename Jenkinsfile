@@ -42,6 +42,7 @@ podTemplate(
             stage ("Deploy") {
                 container ('kubectl') {
                     dir ("deployment") {
+                        sh "chmod +x $WORKSPACE/deploy.sh"
                         sh "$WORKSPACE/deploy.sh"
                     }
                 }
