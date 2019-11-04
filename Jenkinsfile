@@ -42,7 +42,7 @@ podTemplate(
             stage ("Deploy") {
                 container ('kubectl') {
                     dir ("deployment") {
-                        sh "./deploy.sh"
+                        sh "$WORKSPACE/deploy.sh"
                     }
                 }
             }
